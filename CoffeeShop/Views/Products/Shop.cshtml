@@ -1,0 +1,19 @@
+﻿@model IEnumerable<CoffeeShop.Models.Product>
+
+@{
+    ViewData["Title"] = "Shop Coffee";
+}
+
+<h1>Shop Coffee</h1>
+
+<div style="display: flex; flex-wrap: wrap; gap: 20px;">
+    @foreach (var item in Model)
+    {
+        <div style="border: 1px solid #ccc; margin-bottom: 10px; padding: 10px; width: 200px; text-align: center;">
+            <img width="150" src="@item.ImageUrl" alt="@item.Name" style="object-fit: cover;" />
+            <h3>@item.Name</h3>
+            <p>Giá: @item.Price.ToString("C")</p>
+            <p style="font-size: 0.8em;">@item.Detail</p>
+        </div>
+    }
+</div>
